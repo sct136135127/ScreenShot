@@ -13,7 +13,7 @@ JAVA大作业实验报告
 
         该界面包括葫芦娃、爷爷、蛇精、士兵、蝎子精以及路障，整体看起来像个棋盘，背景是葫芦山
         
-        葫芦娃在左边摆出了长蛇型，爷爷在一旁加油助威，右边是由士兵、蝎子精和蛇精构成的锋失型阵型。
+        葫芦娃在左边摆出了长蛇型，爷爷在一旁加油助威，右边是由士兵、蝎子精和蛇精构成的锋矢型阵型。
 
 -----
 ## 各个人物的设计如下：
@@ -78,7 +78,7 @@ JAVA大作业实验报告
 
         `Creature生物类`：
             在Creature 类中存放了 当前血量、满血量、对象标志、攻击力、被命中概率 阵营和存活标志信息，以及站立、攻击、被攻击、死亡的图像位置信息。同时creature 类继承了Runnable线程接口。
-        该类中有 :
+            
             show函数：将该对象放入棋盘
             dead函数：生物死亡
             suffer函数：生物受伤
@@ -105,7 +105,6 @@ JAVA大作业实验报告
 
         `Main类`为遗留类，里面设计了一个Constant接口用于存放各种常量，例如图片地址
 
-
         `FileControler类`用于读取和存储文件，里面有recorder容器会在每次action时存储string信息：
             Move函数： classname move x y
             攻击与技能函数：classname attack x y
@@ -113,21 +112,16 @@ JAVA大作业实验报告
             Move函数： classname num move x y
             攻击与技能函数：classname num attack x y
 
-
         `Filecontroler类`同时继承了线程的接口，run函数判断是否在战斗，在战斗之后会存储内容到txt文件
 
         `Analyser类`继承了线程接口，用于读文件时解析指令和发出指令并更新UI界面
 
-
         `Barrier类`为障碍物类，生成的对象即为不能做任何action的小山
-
 
         `ObjPlace类`为物体类，生物和障碍物都继承这个类。
             ObjPlace类包含了更普遍的信息变量：坐标，名字，障碍物标志，ImageView用于存放图像。
 
-
-        `Formation`存放了枚举类，用来初始化士兵的坐标。
-        
+        `Formation`存放了枚举类，用来初始化士兵的坐标。        
 
         `Space`为棋盘类，其功能十分关键：
             首先定义了存储棋盘对象的二维数组：Objplace space[][]
